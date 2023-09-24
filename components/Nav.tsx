@@ -22,9 +22,15 @@ const Nav = () => {
         <>
             <div className="border-black max-h-16 py-4">
                 {theme === 'light' ? (
-                    <BiSolidSun className="text-2xl cursor-pointer" onClick={changeTheme}/>
+                    <BiSolidMoon
+                        className="text-2xl cursor-pointer"
+                        onClick={changeTheme}
+                    />
                 ) : (
-                    <BiSolidMoon className="text-2xl cursor-pointer" onClick={changeTheme}/>
+                    <BiSolidSun
+                        className="text-2xl cursor-pointer"
+                        onClick={changeTheme}
+                    />
                 )}
             </div>
         </>

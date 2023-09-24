@@ -22,7 +22,7 @@
 
     .banner {
         @apply  dark:md:bg-banner-dark md:bg-banner-light md:rounded-3xl md:px-20
-        flex items-center relative lg:h-[500px] md:h-[300px] 
+        flex items-center relative w-full lg:h-[500px] md:h-[300px] 
         before:content-[''] before:absolute before:w-[100.5%] before:-left-[3px] 
         before:rounded-3xl before:-z-10
         before:h-[101%] before:lg:gradient__banner-light before:lg:dark:gradient__banner-dark ;

@@ -19,7 +19,7 @@ const Banner = () => {
                 alt="banner patern"
                 width={500}
                 height={0}
-                className="md:block hidden md:w-[500px] lg:w-[820px] aspect-auto absolute right-10 "
+                className="md:block hidden md:w-[490px] lg:w-[820px] aspect-auto absolute right-10 "
             />
         </div>
     );
