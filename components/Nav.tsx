@@ -1,28 +1,30 @@
 'use client';
-import Image from 'next/image';
-import { useState } from 'react';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
+import { BiSolidSun, BiSolidMoon } from 'react-icons/bi';
 
 const Nav = () => {
-    const [theme, setTheme] = useState('light');
+    const { theme, setTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) {
+        return null;
+    }
+
+    const changeTheme = () => {
+        setTheme(theme === 'light' ? 'dark' : 'light');
+    };
     return (
         <>
-            <div className="px-8 py-4">
+            <div className="border-black max-h-16 py-4">
                 {theme === 'light' ? (
-                    <Image
-                        src="/imgs/moon.png"
-                        alt="moon icon"
-                        width={30}
-                        height={30}
-                        className="cursor-pointer"
-                    />
+                    <BiSolidSun className="text-2xl cursor-pointer" onClick={changeTheme}/>
                 ) : (
-                    <Image
-                        src="/imgs/sun.png"
-                        alt="moon icon"
-                        width={30}
-                        height={30}
-                        className="cursor-pointer"
-                    />
+                    <BiSolidMoon className="text-2xl cursor-pointer" onClick={changeTheme}/>
                 )}
             </div>
         </>

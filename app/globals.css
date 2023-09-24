@@ -2,3 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .gradient__banner-light {
+        background: linear-gradient(
+            180deg,
+            rgba(221, 230, 241, 1) 20%,
+            rgba(7, 17, 39, 1) 50%,
+            rgba(221, 230, 241, 1) 80%
+        );
+    }
+    .gradient__banner-dark {
+        background: linear-gradient(
+            180deg,
+            rgba(6, 11, 23, 1) 20%,
+            rgba(45, 193, 131, 1) 50%,
+            rgba(6, 11, 23, 1) 80%
+        );
+    }
+
+    .banner {
+        @apply  dark:md:bg-banner-dark md:bg-banner-light md:rounded-3xl md:px-20
+        flex items-center relative lg:h-[500px] md:h-[300px] 
+        before:content-[''] before:absolute before:w-[100.5%] before:-left-[3px] 
+        before:rounded-3xl before:-z-10
+        before:h-[101%] before:lg:gradient__banner-light before:lg:dark:gradient__banner-dark ;
+    }
+}

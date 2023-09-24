@@ -2,15 +2,16 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Nav from '@/components/Nav';
+import Providers from '@/app/Providers';
 
 const inter = Inter({
     subsets: ['latin'],
-    weight: ['400', '500', '600', '700'],
+    weight: ['400', '500', '600', '700', '800', '900'],
 });
 
 export const metadata: Metadata = {
     title: 'Roberto Menezes',
-    description: 'Roberto Menezes frontend developer, portfolio',
+    description: 'Roberto Menezes frontend developer | Portfolio',
 };
 
 export default function RootLayout({
@@ -19,10 +20,18 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en">
-            <body className={`bg-[#DDE6F1] ${inter.className}`}>
-                <Nav />
-                {children}
+        <html lang="en" className="light" style={{ colorScheme: 'light' }}>
+            <body>
+                <Providers>
+                    <div
+                        className={`bg-bg-light dark:bg-bg-dark relative z-0 min-w-screen min-h-screen px-10 ${inter.className}`}
+                    >
+                        <div className="max-w-7xl mx-auto">
+                            <Nav />
+                            {children}
+                        </div>
+                    </div>
+                </Providers>
             </body>
         </html>
     );
