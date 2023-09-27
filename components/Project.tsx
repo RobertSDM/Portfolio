@@ -12,7 +12,7 @@ const Project = () => {
             >
                 Projects
             </h2>
-            {projects.map((project: ProjectProps, index) => (
+            {projects.map((project: ProjectProps, index: number) => (
                 <ProjectDisplay key={index} {...project} />
             ))}
         </div>
