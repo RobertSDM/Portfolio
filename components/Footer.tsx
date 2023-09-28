@@ -18,10 +18,10 @@ const Footer = () => {
             <div className="flex w-full items-center">
                 <div className="flex-1 h-[2px] lg:h-[3px] bg-text-light dark:bg-text-dark rounded-full" />
                 <div className="flex flex-1 justify-center items-center gap-5 lg:gap-12">
-                    <Social
+                    <Social href='https://github.com/RobertSDM'
                         icon={<BiLogoGithub className="text-4xl lg:text-5xl" />}
                     />
-                    <Social
+                    <Social href='https://linkedin.com/in/roberto-menezes/'
                         icon={
                             <BiLogoLinkedin className="text-4xl lg:text-5xl" />
                         }
