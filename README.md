@@ -1,6 +1,6 @@
 # Roberto Menezes | Portfolio
 
-<a href="http://linkedin.com/in/roberto-menezes/">Linkedin</a>
+<a target="_blank" href="http://linkedin.com/in/roberto-menezes/">`Linkedin`</a>
 
 Portfolio created using: 
 - react.js
