@@ -1,20 +1,39 @@
-import ProjectDisplay from './ProjectDisplay';
-import projects from '../projects.json';
-import { ProjectProps } from '@/types';
+"use client";
+import { ProjectProps } from "@/types";
+import { useState } from "react";
+import { MdOutlineExpandLess, MdOutlineExpandMore } from "react-icons/md";
+//components
+import ProjectDisplay from "./ProjectDisplay";
+import projects from "../utils/projects.json";
 
 const Project = () => {
+    const [projLimit, setProjLimit] = useState(true);
+
+    const handleProjLimit = () => {
+        setProjLimit((prev) =>
+            prev === true ? (prev = false) : (prev = true)
+        );
+    };
+
     return (
         <div className="mt-32 lg:mt-40 flex flex-col items-center">
-            <h2
-                className="after:content-[''] after:absolute after:dark:bg-bg-light after:bg-bg-dark 
-            after:w-16 after:rounded-full after:h-[3px] after:left-0 after:-bottom-3 
-            text-3xl relative font-semibold"
+            <h2 className="project__title">Projects</h2>
+            {projects.map((project: ProjectProps, index: number) => {
+                if (projLimit && index > 2) return;
+                return <ProjectDisplay key={index} {...project} />;
+            })}
+
+            <button
+                className="text-md md:text-xl mt-24 font-medium flex items-center md:gap-1"
+                onClick={handleProjLimit}
             >
-                Projects
-            </h2>
-            {projects.map((project: ProjectProps, index: number) => (
-                <ProjectDisplay key={index} {...project} />
-            ))}
+                {projLimit ? `Show all projects` : `Show less projects`}
+                {projLimit ? (
+                    <MdOutlineExpandMore className="text-2xl md:text-3xl" />
+                ) : (
+                    <MdOutlineExpandLess className="text-2xl md:text-3xl" />
+                )}
+            </button>
         </div>
     );
 };

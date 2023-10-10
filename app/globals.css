@@ -21,24 +21,36 @@
     }
 
     .banner {
-        @apply  dark:md:bg-banner-dark md:bg-banner-light md:rounded-3xl md:px-20
+        @apply dark:md:bg-banner-dark md:bg-banner-light md:rounded-3xl md:px-20
         flex items-center relative w-full lg:h-[500px] md:h-[300px] 
         before:content-[''] before:absolute before:w-[100.3%] before:-left-[1.5px]  
         before:rounded-3xl before:-z-10
-        before:h-[100%] before:lg:gradient__banner-light before:lg:dark:gradient__banner-dark ;
+        before:h-[100%] before:lg:gradient__banner-light before:lg:dark:gradient__banner-dark;
     }
 
     .display {
         @apply mt-40 flex odd:flex-row-reverse lg:odd:flex-col 
-        lg:flex-col gap-5  md:max-w-md lg:max-w-full
-        w-full lg:w-fit
+        lg:flex-col gap-5 md:max-w-2xl lg:max-w-full
+        w-full lg:w-fit;
     }
 
-    .mobile{
-        @apply hidden lg:block shadow-2xl absolute w-40 h-80 dark:border-2 dark:border-white/50 rounded-2xl overflow-hidden left-[80%] -bottom-24
+    .mobile {
+        @apply hidden lg:block shadow-2xl absolute w-40 h-80 dark:border-2 dark:border-white/50 rounded-2xl overflow-hidden left-[80%] -bottom-24;
     }
 
-    .desktop{
-        @apply w-56 lg:w-[714px] h-40 lg:h-96 dark:border dark:border-white/50 rounded-2xl lg:shadow-xl overflow-hidden before:content-[''] 
+    .desktop {
+        @apply w-56 lg:w-[714px] h-40 lg:h-96 dark:border dark:border-white/50 rounded-2xl lg:shadow-xl overflow-hidden before:content-[''] md:h-60 md:w-96;
+    }
+
+    .container__banner {
+        @apply flex md:max-w-4xl w-full lg:max-w-full md:items-center mt-10 lg:mt-24 flex-col-reverse md:flex-col relative;
+    }
+
+    .about__title {
+        @apply after:content-[''] after:absolute after:dark:bg-bg-light after:bg-bg-dark after:w-10 after:rounded-full after:h-[3px] after:left-0 after:-bottom-1 text-lg relative font-semibold;
+    }
+
+    .project__title {
+        @apply after:content-[''] after:absolute after:dark:bg-bg-light after:bg-bg-dark after:w-16 after:rounded-full after:h-[3px] after:left-0 after:-bottom-3 text-3xl relative font-semibold;
     }
 }

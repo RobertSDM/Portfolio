@@ -14,7 +14,7 @@ const Footer = () => {
         return null;
     }
     return (
-        <footer className="relative mt-52 flex flex-col w-full pb-5 bottom-0 gap-5 items-center">
+        <footer className="relative mt-44 flex flex-col w-full pb-5 bottom-0 gap-5 items-center max-w-6xl mx-auto">
             <div className="flex w-full items-center">
                 <div className="flex-1 h-[2px] lg:h-[3px] bg-text-light dark:bg-text-dark rounded-full" />
                 <div className="flex flex-1 justify-center items-center gap-5 lg:gap-12">
@@ -27,7 +27,7 @@ const Footer = () => {
                         }
                     />
                 </div>
-                <div className="flex-1 h-[2px] lg:h-[5px] bg-text-light dark:bg-text-dark rounded-full" />
+                <div className="flex-1 h-[2px] lg:h-[3px] bg-text-light dark:bg-text-dark rounded-full" />
             </div>
             <p className="text-text-light mt-10 mb-5 dark:text-text-dark">
                 Roberto Menezes <span className="text-[12px]">©</span> 2023

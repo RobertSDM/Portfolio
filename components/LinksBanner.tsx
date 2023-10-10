@@ -1,14 +1,10 @@
 'use client';
-import { useTheme } from 'next-themes';
-import Image from 'next/image';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
-
 import { BiLogoLinkedin, BiLogoGithub } from 'react-icons/bi';
+//components
 import Social from './Social';
 
 const Links = () => {
-    const { theme, setTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {

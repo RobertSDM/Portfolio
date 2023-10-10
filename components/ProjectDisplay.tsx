@@ -1,7 +1,7 @@
-import { ProjectProps } from '@/types';
-import Image from 'next/image';
-import Link from 'next/link';
-import React, { useState } from 'react';
+import { ProjectProps } from "@/types";
+import Link from "next/link";
+import React from "react";
+import Display from "./Display";
 
 const ProjectDisplay = ({
     description,
@@ -15,74 +15,47 @@ const ProjectDisplay = ({
             <div className="relative ">
                 <div className="desktop">
                     {/* Desktop project view */}
-                    {imgDesktop ? (
-                        <div className="group relative h-full">
-                            <Image
-                                src={imgDesktop}
-                                alt={`Image project ${name}`}
-                                fill
-                                className="object-cover rounded-xl -z-10 group-hover:brightness-[20%]"
-                            />
-                            <div className=" hidden break-words text-white text-center max-w-xs group-hover:lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                                <p className="mb-5">{description}</p>
-                                <Link
-                                    href={projectLink}
-                                    className="font-semibold underline"
-                                >
-                                    See more -&gt;
-                                </Link>
-                            </div>
-                        </div>
-                    ) : (
-                        <div
-                            className="bg-[#0B3B27] group w-full h-full grid
-                place-items-center"
-                        >
-                            <p
-                                className=" text-[#12FF9A] lg:group-hover:opacity-100 lg:opacity-0 
-                    transition-opacity duration-150 font-bold text-xl lg:text-5xl"
-                            >
-                                Soon
-                            </p>
-                        </div>
-                    )}
+
+                    <Display
+                        name={name}
+                        img={imgDesktop || null}
+                        projectLink={projectLink}
+                        description={description}
+                        textStyles={{
+                            size: "lg:text-5xl",
+                            color: "bg-[#0B3B27]",
+                        }}
+                    />
                 </div>
                 {/* Mobile project view */}
                 <div className="mobile">
-                    {imgMobile ? (
-                        <div className="group">
-                            <Image
-                                src={imgMobile}
-                                alt={`Project ${name} image`}
-                                width={160}
-                                height={320}
-                                className="object-cover -z-10 group-hover:brightness-[20%]"
-                            />
-                            <div className="w-full text-center hidden max-w-xs group-hover:lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                                <Link
-                                    href={projectLink}
-                                    className="font-semibold underline text-sm text-white"
-                                >
-                                    See more -&gt;
-                                </Link>
-                            </div>
-                        </div>
-                    ) : (
-                        <div className=" group lg:grid hidden h-full place-items-center bg-[#0C7146]">
-                            <p
-                                className=" text-[#12FF9A] lg:group-hover:opacity-100 lg:opacity-0 
-                    transition-opacity duration-150 font-bold text-xl lg:text-2xl"
-                            >
-                                Soon
-                            </p>
-                        </div>
-                    )}
+                    <Display
+                        styleLink="text-sm text-white"
+                        name={name}
+                        img={imgMobile || null}
+                        projectLink={projectLink}
+                        width={160}
+                        height={320}
+                        textStyles={{
+                            size: "lg:text-2xl",
+                            color: "bg-[#0C7146]",
+                        }}
+                    />
                 </div>
             </div>
             {/* Description */}
-            <div className="lg:space-y-3 self-start">
-                <h2 className="text-xl lg:text-4xl font-semibold">{name}</h2>
-                <p className={`mb-5 ${!imgDesktop ? "lg:block" : "lg:hidden"}`}>{description}</p>
+            <div className="lg:space-y-3 md:space-y-4 self-start">
+                <h2 className="text-xl lg:text-4xl md:text-2xl font-semibold md:font-bold">
+                    {name}
+                </h2>
+                <p
+                    className={`mb-5 ${
+                        !imgDesktop ? "lg:block" : "lg:hidden"
+                    } md:text-xl text-md`}
+                >
+                    {description}
+                </p>
+                {imgDesktop && <Link href={projectLink} className="underline md:text-xl lg:hidden block font-medium">See more-&gt;</Link>}
             </div>
         </section>
     );

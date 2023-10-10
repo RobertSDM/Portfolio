@@ -20,7 +20,7 @@ const Nav = () => {
     };
     return (
         <>
-            <div className="border-black max-h-16 py-4">
+            <div className="border-black max-h-16 py-4 max-w-7xl m-auto">
                 {theme === 'light' ? (
                     <BiSolidMoon
                         className="text-2xl cursor-pointer"

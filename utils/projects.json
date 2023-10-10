@@ -7,6 +7,14 @@
     {
         "name": "Soon",
         "description": "New projects soon as I can.",
+        "projectLink": "https://www.linkedin.com/in/roberto-menezes/",
+        "imgDesktop": "/imgs/portfolio_desktop.jpg",
+        "imgMobile": "/imgs/portfolio_mobile.jpg"
+
+    },
+    {
+        "name": "Soon",
+        "description": "New projects soon as I can.",
         "projectLink": "https://www.linkedin.com/in/roberto-menezes/"
     },
     {

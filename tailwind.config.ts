@@ -10,6 +10,7 @@ const config: Config = {
         extend: {
             colors: {
                 'bg-light': '#F5F5F5',
+                'alt-bg-light': "#ececec",
                 'bg-dark': '#060B17',
                 'light-green': '#2DC183',
                 'text-dark': '#fff',
