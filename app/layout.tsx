@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 //components
 import Nav from "@/components/Nav";
-import Providers from "@/components/Provider";
+import Providers from "@/components/ThemeProvider";
 import Footer from "@/components/Footer";
 
 const inter = Inter({

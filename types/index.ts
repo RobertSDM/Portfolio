@@ -1,12 +1,11 @@
-export interface ProjectProps {
+interface ProjectProps {
     name: string;
     description: string;
     projectLink: string;
-    imgDesktop?: string;
-    imgMobile?: string;
+    imgDesktop: string;
 }
 
-export interface DisplayProps {
+interface DisplayProps {
     img: string | null;
     description?: string;
     projectLink: string;
@@ -14,5 +13,7 @@ export interface DisplayProps {
     styleLink?: string;
     height?: number;
     width?: number;
-    textStyles?: { color:string, size:string};
+    textStyles?: { color: string; size: string };
 }
+
+export type { ProjectProps, DisplayProps };

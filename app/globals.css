@@ -29,7 +29,7 @@
     }
 
     .display {
-        @apply mt-40 flex odd:flex-row-reverse lg:odd:flex-col 
+        @apply mt-24 flex odd:flex-row-reverse lg:odd:flex-col 
         lg:flex-col gap-5 md:max-w-2xl lg:max-w-full
         w-full lg:w-fit;
     }
@@ -47,10 +47,10 @@
     }
 
     .about__title {
-        @apply after:content-[''] after:absolute after:dark:bg-bg-light after:bg-bg-dark after:w-10 after:rounded-full after:h-[3px] after:left-0 after:-bottom-1 text-lg relative font-semibold;
+        @apply text-lg relative font-semibold;
     }
 
     .project__title {
-        @apply after:content-[''] after:absolute after:dark:bg-bg-light after:bg-bg-dark after:w-16 after:rounded-full after:h-[3px] after:left-0 after:-bottom-3 text-3xl relative font-semibold;
+        @apply text-xl lg:text-3xl relative font-semibold;
     }
 }

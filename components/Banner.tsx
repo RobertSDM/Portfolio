@@ -10,9 +10,6 @@ const Banner = () => {
                 <h1 className="font-black  dark:text-text-dark text-3xl lg:text-6xl">
                     Roberto Menezes
                 </h1>
-                <p className="font-semibold mt-5 text-2xl lg:text-4xl">
-                    <span className="text-light-green">Frontend</span> Developer
-                </p>
             </div>
             <Image
                 src="/imgs/banner-patern.png"
