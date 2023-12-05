@@ -13,7 +13,7 @@ const Project = () => {
 
     useEffect(() => {
         async function getProjects() {
-            const res = await fetch("../api/projects", {
+            const res = await fetch("../api/projects/routes", {
                 headers: {
                     authorization: authorization,
                 },
