@@ -1,4 +1,5 @@
-interface ProjectProps {
+interface IProject {
+    id?: string;
     name: string;
     description: string;
     projectLink: string;
@@ -16,4 +17,4 @@ interface DisplayProps {
     textStyles?: { color: string; size: string };
 }
 
-export type { ProjectProps, DisplayProps };
+export type { IProject, DisplayProps };
