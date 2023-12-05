@@ -1,24 +1,39 @@
 "use client";
-import { ProjectProps } from "@/types";
-import { useState } from "react";
+import { IProject } from "@/types";
+import { useEffect, useState } from "react";
 import { MdOutlineExpandLess, MdOutlineExpandMore } from "react-icons/md";
 //components
 import ProjectDisplay from "./ProjectDisplay";
-import projects from "../utils/projects";
 
 const Project = () => {
     const [projLimit, setProjLimit] = useState(true);
+    const [projects, setProjects] = useState([]);
 
-    const handleProjLimit = () => {
-        setProjLimit((prev) =>
-            prev === true ? (prev = false) : (prev = true)
-        );
-    };
+    const authorization = process.env.NEXT_PUBLIC_API_AUTHORIZATION ?? "";
+
+    useEffect(() => {
+        async function getProjects() {
+            const res = await fetch("../api/projects", {
+                headers: {
+                    authorization: authorization,
+                },
+                next: {
+                    revalidate: 1,
+                },
+            });
+            const data = await res.json();
+            if (res.ok) {
+                setProjects(data);
+            }
+        }
+
+        getProjects();
+    }, [authorization]);
 
     return (
         <div className="mt-16 lg:mt-24 flex flex-col items-center">
             <h2 className="project__title">Projects</h2>
-            {projects.map((project: ProjectProps, index: number) => {
+            {projects.map((project: IProject, index: number) => {
                 if (projLimit && index > 2) return;
                 return <ProjectDisplay key={index} {...project} />;
             })}
@@ -26,7 +41,11 @@ const Project = () => {
             {projects.length >= 3 && (
                 <button
                     className="text-md md:text-xl mt-24 font-medium flex items-center md:gap-1"
-                    onClick={handleProjLimit}
+                    onClick={() => {
+                        setProjLimit((prev) =>
+                            prev === true ? (prev = false) : (prev = true)
+                        );
+                    }}
                 >
                     {projects.length >= 3 && projLimit
                         ? `Show all projects`

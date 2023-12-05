@@ -1,4 +1,5 @@
-import { DisplayProps, ProjectProps } from "@/types";
+"use client";
+import { DisplayProps, IProject } from "@/types";
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
@@ -8,11 +9,12 @@ const ProjectDisplay = ({
     name,
     imgDesktop,
     projectLink,
-}: ProjectProps) => {
+}: IProject) => {
+
     return (
         <section className="display">
             <div className="relative ">
-                <h2 className="hidden md:block text-xl lg:text-2xl md:text-2xl font-semibold md:font-bold">
+                <h2 className="hidden lg:block text-xl lg:text-2xl md:text-2xl font-semibold md:font-bold">
                     {name}
                 </h2>
                 <div className="desktop">
@@ -32,7 +34,7 @@ const ProjectDisplay = ({
             </div>
             {/* Description */}
             <div className="lg:space-y-3 md:space-y-4 self-start">
-                <h2 className="block md:hidden text-xl lg:text-2xl md:text-2xl font-semibold md:font-bold">
+                <h2 className="block lg:hidden text-xl lg:text-2xl md:text-2xl font-semibold md:font-bold">
                     {name}
                 </h2>
                 <p
