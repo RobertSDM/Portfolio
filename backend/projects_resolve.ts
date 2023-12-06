@@ -8,7 +8,6 @@ const findAllProjects = async () => {
         const projects = await prisma.projects.findMany();
         return projects;
     } catch (error) {
-        console.error(error);
         return false;
     }
 };
