@@ -30,6 +30,7 @@ const Project = () => {
         getProjects();
     }, [authorization]);
 
+    
     return (
         <div className="mt-16 lg:mt-24 flex flex-col items-center">
             <h2 className="project__title">Projects</h2>

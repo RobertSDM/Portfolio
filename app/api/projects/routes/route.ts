@@ -19,7 +19,7 @@ const GET = async (req: NextRequest) => {
             { status: 401 }
         );
     }
-    const projects = findAllProjects();
+    const projects = await findAllProjects();
 
     return NextResponse.json(projects, { status: 200 });
 };

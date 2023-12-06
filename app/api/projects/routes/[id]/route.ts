@@ -5,12 +5,12 @@ const DELETE = async (
     req: NextRequest,
     { params }: { params: { id: string } }
 ) => {
-    const deletedProject = deleteProject(params.id);
+    const deletedProject = await deleteProject(Number(params.id));
 
     if (!deletedProject) {
         return NextResponse.json(null, {
             statusText: "No content",
-            status: 404,
+            status: 200,
         });
     } else {
         return NextResponse.json(deletedProject, {
@@ -24,10 +24,10 @@ const PUT = async (
     { params }: { params: { id: string } }
 ) => {
     const body = await req.json();
-    const updated = updateProject(params.id, body);
+    const updatedProject = await updateProject(Number(params.id), body);
 
-    if (updated) {
-        return NextResponse.json(null, {
+    if (updatedProject) {
+        return NextResponse.json(updatedProject, {
             status: 200,
         });
     } else {
