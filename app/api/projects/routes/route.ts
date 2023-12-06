@@ -3,21 +3,11 @@ import { IProject } from "@/types";
 import { NextRequest, NextResponse } from "next/server";
 
 const GET = async (req: NextRequest) => {
-    if (!req.headers.get("authorization")) {
-        return NextResponse.json(
-            { message: "Requisição inválida" },
-            { status: 422 }
-        );
-    }
-
     if (
         process.env.NEXT_PUBLIC_API_AUTHORIZATION !==
         req.headers.get("authorization")
     ) {
-        return NextResponse.json(
-            { message: "Autorização não concedida" },
-            { status: 401 }
-        );
+        return NextResponse.json({ message: "No authorized" }, { status: 401 });
     }
     const projects = await findAllProjects();
 
@@ -27,7 +17,7 @@ const GET = async (req: NextRequest) => {
 const POST = async (req: NextRequest) => {
     const data = (await req.json()) as IProject;
     if (!data.projectLink) {
-        return NextResponse.json("Não", {
+        return NextResponse.json("No authorized", {
             status: 422,
         });
     }
