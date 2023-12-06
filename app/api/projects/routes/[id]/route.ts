@@ -8,10 +8,13 @@ const DELETE = async (
     const deletedProject = await deleteProject(Number(params.id));
 
     if (!deletedProject) {
-        return NextResponse.json(null, {
-            statusText: "No content",
-            status: 200,
-        });
+        return NextResponse.json(
+            { message: `No projects found with the id: ${params.id}` },
+            {
+                statusText: "No content",
+                status: 200,
+            }
+        );
     } else {
         return NextResponse.json(deletedProject, {
             status: 200,
@@ -31,10 +34,13 @@ const PUT = async (
             status: 200,
         });
     } else {
-        return NextResponse.json(null, {
-            status: 200,
-            statusText: "No content",
-        });
+        return NextResponse.json(
+            { message: `No projects found with the id: ${params.id}` },
+            {
+                status: 200,
+                statusText: "No content",
+            }
+        );
     }
 };
 

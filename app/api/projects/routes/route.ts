@@ -11,7 +11,16 @@ const GET = async (req: NextRequest) => {
     }
     const projects = await findAllProjects();
 
-    return NextResponse.json(projects, { status: 200 });
+    if (projects) {
+        return NextResponse.json(projects, { status: 200 });
+    } else {
+        return NextResponse.json(
+            { message: "Error while searching" },
+            {
+                status: 500,
+            }
+        );
+    }
 };
 
 const POST = async (req: NextRequest) => {
@@ -22,11 +31,20 @@ const POST = async (req: NextRequest) => {
         });
     }
 
-    const addedProject = createProject(data);
+    const createdProject = await createProject(data);
 
-    return NextResponse.json(addedProject, {
-        status: 200,
-    });
+    if (createdProject) {
+        return NextResponse.json(createdProject, {
+            status: 200,
+        });
+    } else {
+        return NextResponse.json(
+            { message: "Error while creating" },
+            {
+                status: 500,
+            }
+        );
+    }
 };
 
 export { GET, POST };
