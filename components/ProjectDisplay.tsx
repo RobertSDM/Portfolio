@@ -69,7 +69,7 @@ const Display = ({
 }: DisplayProps) => {
     return (
         <>
-            {img ? (
+            {img && (
                 <div className="group relative h-full">
                     {height ? (
                         <Image
@@ -98,18 +98,8 @@ const Display = ({
                         </Link>
                     </div>
                 </div>
-            ) : (
-                <div
-                    className={`${textStyles?.color} group w-full h-full grid
-                place-items-center`}
-                >
-                    <p
-                        className={`font-bold text-xl transition-opacity duration-150 text-[#12FF9A] lg:group-hover:opacity-100 lg:opacity-0 ${textStyles?.size} md:text-3xl`}
-                    >
-                        Soon
-                    </p>
-                </div>
             )}
+            )
         </>
     );
 };
