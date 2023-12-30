@@ -106,7 +106,6 @@ const Display = ({
     styleLink,
     height,
     width,
-    textStyles,
 }: DisplayProps) => {
     return (
         <>

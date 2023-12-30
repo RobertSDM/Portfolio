@@ -32,7 +32,7 @@ const Project = () => {
 
     
     return (
-        <div className="mt-16 lg:mt-24 flex flex-col items-center">
+        <div className="mt-16 lg:mt-24 flex flex-col gap-y-10 items-center ">
             <h2 className="project__title">Projects</h2>
             {projects.map((project: IProject, index: number) => {
                 if (projLimit && index > 2) return;
