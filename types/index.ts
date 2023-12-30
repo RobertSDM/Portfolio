@@ -4,6 +4,8 @@ interface IProject {
     description: string;
     projectLink: string;
     imgDesktop: string;
+    technologies: string[];
+    languages: string[];
 }
 
 interface DisplayProps {

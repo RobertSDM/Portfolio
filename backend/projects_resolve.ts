@@ -33,6 +33,8 @@ const createProject = async (project: IProject) => {
                 description: project.description,
                 projectLink: project.projectLink,
                 imgDesktop: project.imgDesktop,
+                technologies: project.technologies,
+                languages: project.languages,
             },
         });
 
@@ -50,6 +52,8 @@ const updateProject = async (id: number, newProject: IProject) => {
                 description: newProject.description,
                 projectLink: newProject.projectLink,
                 imgDesktop: newProject.imgDesktop,
+                technologies: newProject.technologies,
+                languages: newProject.languages,
             },
             where: {
                 id: id,
