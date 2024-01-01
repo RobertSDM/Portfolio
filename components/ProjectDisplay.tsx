@@ -69,7 +69,7 @@ const Datasheet = ({ languages, technologies }: Datasheet) => {
             {/* Languages */}
             <div className="w-full space-y-2">
                 <h2 className="font-semibold hidden lg:block">Languages</h2>
-                <div className="flex items-center gap-4 flex-wrap">
+                <div className="flex items-center gap-4 flex-wrap w-fit">
                     {languages.map((language) => (
                         <span
                             key={language}
@@ -81,7 +81,7 @@ const Datasheet = ({ languages, technologies }: Datasheet) => {
                 </div>
             </div>
             {/* Technologies */}
-            <div className=" w-[710px] space-y-2">
+            <div className="w-full space-y-2">
                 <h2 className="font-semibold hidden lg:block">Technologies</h2>
                 <div className="flex items-center gap-4 flex-wrap">
                     {technologies.map((tech) => (
