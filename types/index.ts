@@ -6,6 +6,7 @@ interface IProject {
     imgDesktop: string;
     technologies: string[];
     languages: string[];
+    githubLink: string;
 }
 
 interface DisplayProps {

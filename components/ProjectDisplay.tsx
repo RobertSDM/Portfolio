@@ -16,17 +16,21 @@ const ProjectDisplay = ({
     projectLink,
     technologies,
     languages,
+    githubLink,
 }: IProject) => {
     return (
         <section className="max-w-sm md:w-fit lg:max-w-3xl flex gap-y-4 justify-center flex-col">
             <div className="flex gap-x-2 md:flex-col md:max-w-2xl lg:max-w-full w-full items-center p-2">
                 <div className="relative">
-                    <h2 className=" lg:block text-xl lg:text-2xl md:text-2xl font-semibold md:font-bold">
+                    <Link
+                        href={githubLink}
+                        target="_blank"
+                        className="lg:block text-xl lg:text-2xl md:text-2xl font-semibold md:font-bold underline mb-2"
+                    >
                         {name}
-                    </h2>
+                    </Link>
                     <div className="desktop">
                         {/* Desktop project view */}
-
                         <Display
                             name={name}
                             img={imgDesktop || null}

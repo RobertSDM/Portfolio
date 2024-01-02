@@ -35,6 +35,7 @@ const createProject = async (project: IProject) => {
                 imgDesktop: project.imgDesktop,
                 technologies: project.technologies,
                 languages: project.languages,
+                githubLink: project.githubLink,
             },
         });
 
@@ -54,6 +55,7 @@ const updateProject = async (id: number, newProject: IProject) => {
                 imgDesktop: newProject.imgDesktop,
                 technologies: newProject.technologies,
                 languages: newProject.languages,
+                githubLink: newProject.githubLink,
             },
             where: {
                 id: id,
